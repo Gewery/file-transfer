@@ -58,6 +58,7 @@ while True:
     else:
         send_string('ACK')
         send_file(file_location)
+        print('file ' + file_location + ' sent')
 
 
 

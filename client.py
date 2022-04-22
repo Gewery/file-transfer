@@ -26,7 +26,7 @@ def download_file(server_location):
         print(response)
         return
 
-    client_location = server_location
+    client_location = server_location[server_location.rfind('/') + 1:]
     if os.path.exists(client_location):
         print('File already exists, saving it as: ', end='')
         client_location, ext = client_location[:client_location.rfind('.')], client_location[
