@@ -12,8 +12,13 @@ def send_file(file_location):
 
     send_string(str(len(to_send)))
 
+    total_chunks = len(to_send)
+    chunks_sent = 0
     for kb in to_send:
         con.send(kb)
+        chunks_sent += 1
+        if chunks_sent % 100 == 0:
+            print('sent ' + str(chunks_sent) + ' / ' + str(total_chunks) + ' chunks')
 
     f.close()
 
